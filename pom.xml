@@ -18,12 +18,23 @@
 
   <groupId>com.example.flex.gettingstarted</groupId>
   <artifactId>canary-api</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-${build.number}</version>
   <packaging>jar</packaging>
 
   <name>Canary API - SpringBoot</name>
   <description>Demo project for Spring Boot</description>
-
+  <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>55e43615a138-releases</name>
+        <url>http://ec2-100-24-22-217.compute-1.amazonaws.com:9998/artifactory/canaray-release</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>55e43615a138-snapshots</name>
+        <url>http://ec2-100-24-22-217.compute-1.amazonaws.com:9998/artifactory/canaray-release</url>
+    </snapshotRepository>
+</distributionManagement>
 
   <properties>
     <java.version>1.8</java.version>
