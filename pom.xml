@@ -27,12 +27,12 @@
     <repository>
         <id>central</id>
         <name>55e43615a138-releases</name>
-        <url>http://ec2-100-24-22-217.compute-1.amazonaws.com:9998/artifactory/canaray-release</url>
+        <url>http://localhost:9998/artifactory/canaray-release</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>55e43615a138-snapshots</name>
-        <url>http://ec2-100-24-22-217.compute-1.amazonaws.com:9998/artifactory/canaray-release</url>
+        <url>http://localhost:9998/artifactory/canaray-release</url>
     </snapshotRepository>
 </distributionManagement>
 
