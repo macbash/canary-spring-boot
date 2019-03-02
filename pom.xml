@@ -23,6 +23,11 @@
 
   <name>Canary API - SpringBoot</name>
   <description>Demo project for Spring Boot</description>
+  <scm>
+		<url>https://github.com/macbash/canary-spring-boot</url>
+		<connection>scm:git:git@github.com:macbash/canary-spring-boot.git</connection>
+		<developerConnection>scm:git:git@github.com:macbash/canary-spring-boot.git</developerConnection>
+	</scm>
   <distributionManagement>
     <repository>
         <id>central</id>
