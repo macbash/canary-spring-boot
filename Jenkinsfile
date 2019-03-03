@@ -5,5 +5,10 @@ node {
     stage('Build') {
      sh 'mvn clean install test'
 }
+post { 
+        always { 
+            cleanWs()
+        }
+    }
 
 }
