@@ -2,7 +2,7 @@ node {
     stage('Checkout') {
     checkout scm
 }
- stag('Artifact-Def') {
+ stage('Artifact-Def') {
    sh '''
    mvn versions:set -DnewVersion=1.0.1-'${env.BUILD_NUMBER}'-RELEASE
    '''
