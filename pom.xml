@@ -37,8 +37,8 @@
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
-        <name>ae0450ba54f6-releases</name>
-        <url>http://localhost:9998/artifactory/canaray-release</url>
+        <name>ae0450ba54f6-snapshots</name>
+        <url>http://localhost:9998/artifactory/canaray-snapshots</url>
     </snapshotRepository>
 </distributionManagement>
 
