@@ -12,7 +12,7 @@ node {
 
 stage('Deploy') {
    sh '''
-     mvn deploy -Dbuildnumber='-${env.BUILD_NUMBER}-SNAPSHOT'
+     mvn deploy -Dbuildnumber='${env.BUILD_NUMBER}-SNAPSHOT'
      '''
 }
 
