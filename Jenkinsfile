@@ -5,7 +5,7 @@ node {
  stage('Artifact-Def') {
   if(env.BRANCH_NAME == 'master'){
    sh '''
-   mvn versions:set -DnewVersion=1.0.1-'${env.BUILD_NUMBER}'-RELEASE
+   mvn versions:set -DnewVersion=1.0.4-'${env.BUILD_NUMBER}'-RELEASE
    '''
 }
 }
@@ -60,9 +60,9 @@ stage('Publish-Artifact') {
 }
 stage('Deploy') {
  if(env.BRANCH_NAME == 'master'){
-   sh '''
-     echo 'In-Progress'
-    '''
+  paramvalue="1.0.4-${env.BUILD_NUMBER}-RELEASE"
+  println paramvalue
+ build job: 'Stag-Release', parameters: [[$class: 'StringParameterValue', name: 'ARTIFACT_NAME', value: paramvalue]]
 } else {
   paramvalue="1.0.4-b${env.BUILD_NUMBER}-SNAPSHOT"
   println paramvalue
