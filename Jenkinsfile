@@ -1,12 +1,9 @@
 node {
-    stage 'Checkout'
-
+    stage('Checkout') {
     checkout scm
-    
-    stage 'Build' {
+}
+    stage('Build') {
      sh 'mvn clean install test'
-
-
 }
 
 }
