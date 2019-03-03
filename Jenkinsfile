@@ -64,7 +64,7 @@ stage('Deploy') {
      echo 'In-Progress'
     '''
 } else {
-  paramvalue="1.0.1-'${env.BUILD_NUMBER}'-SNAPTSHOT"
+  paramvalue="1.0.1-${env.BUILD_NUMBER}-SNAPTSHOT"
   println paramvalue
  build job: 'Dev-Release', parameters: [[$class: 'StringParameterValue', name: 'artifact_VERSION', value: paramvalue]]
 }
