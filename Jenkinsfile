@@ -6,4 +6,9 @@ node {
      sh 'mvn clean install test'
 }
 
+ stage('CodeCoverage') {
+     sh 'mvn sonar:sonar'
+}
+
+
 }
