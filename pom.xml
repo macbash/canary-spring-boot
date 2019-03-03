@@ -18,7 +18,7 @@
 
   <groupId>com.example.flex.gettingstarted</groupId>
   <artifactId>canary-api</artifactId>
-  <version>1.0.4-SNAPSHOT</version>
+  <version>1.0.4-${buildnumber}</version>
   <packaging>jar</packaging>
 
   <name>Canary API - SpringBoot</name>
