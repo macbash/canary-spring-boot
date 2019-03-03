@@ -7,28 +7,54 @@ node {
    sh '''
    mvn versions:set -DnewVersion=1.0.1-'${env.BUILD_NUMBER}'-RELEASE
    '''
-} else {
-             sh '''
-   mvn versions:set -DnewVersion=1.0.1-'${env.BUILD_NUMBER}'-SNAPTSHOT
-   '''
 }
 }
 
     stage('Build') {
-     sh 'mvn clean install'
+  if(env.BRANCH_NAME == 'master'){
+   sh '''
+     mvn clean install
+  '''
+} else {
+  sh '''
+   mvn clean install -Dbuildnumber=b'${env.BUILD_NUMBER}'
+  '''
+}
 }
  stage('Test') {
-     sh 'mvn test'
+ if(env.BRANCH_NAME == 'master'){
+   sh '''
+     mvn test
+  '''
+} else {
+  sh '''
+   mvn test -Dbuildnumber=b'${env.BUILD_NUMBER}'
+  '''
 }
- stage('CodeCoverage') {
-     sh 'mvn sonar:sonar'
 }
 
+ stage('CodeCoverage') {
+ if(env.BRANCH_NAME == 'master'){
+   sh '''
+     mvn sonar:sonar
+    '''
+} else {
+   sh '''
+   mvn sonar:sonar -Dbuildnumber=b'${env.BUILD_NUMBER}'
+   '''
+}
+}
+
+
 stage('Deploy') {
+ if(env.BRANCH_NAME == 'master'){
    sh '''
      mvn deploy
-     
-     '''
+    '''
+} else {
+   sh '''
+   mvn deploy -Dbuildnumber=b'${env.BUILD_NUMBER}'
+   '''
 }
 
 }
