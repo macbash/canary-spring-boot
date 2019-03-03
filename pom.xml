@@ -22,7 +22,7 @@
   <packaging>jar</packaging>
 
   <name>Canary API - SpringBoot</name>
-  <description>Demo project for Spring boot</description>
+  <description>Demo project for Spring Boot</description>
   <scm>
 		<url>https://github.com/macbash/canary-spring-boot</url>
 		<connection>scm:git:git@github.com:macbash/canary-spring-boot.git</connection>
