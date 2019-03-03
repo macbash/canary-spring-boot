@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloworldApplication {
   @RequestMapping("/")
   public String home() {
-    return "Hello World!-Dev";
+    return "Hello World";
   }
 
   /**
@@ -35,7 +35,7 @@ public class HelloworldApplication {
    * If your app does not handle health checks, a HTTP 404 response is interpreted
    *     as a successful reply.
    */
-  @RequestMapping("/_ah/health")
+  @RequestMapping("/health")
   public String healthy() {
     // Message body required though ignored
     return "Healthy";
