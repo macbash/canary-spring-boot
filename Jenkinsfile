@@ -65,6 +65,7 @@ stage('Deploy') {
     '''
 } else {
   paramvalue="1.0.1-'${env.BUILD_NUMBER}'-SNAPTSHOT"
+  println paramvalue
  build job: 'Dev-Release', parameters: [[$class: 'StringParameterValue', name: 'artifact_VERSION', value: paramvalue]]
 }
 
