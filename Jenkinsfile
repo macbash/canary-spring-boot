@@ -11,7 +11,7 @@ node {
 }
 
 stage('Deploy') {
-   sh 'mvn deploy -Dbuildnumber='-${env.BUILD_NUMBER}-SNAPSHOT''
+   sh 'mvn deploy -Dbuildnumber="-${env.BUILD_NUMBER}-SNAPSHOT"'
 }
 
 }
