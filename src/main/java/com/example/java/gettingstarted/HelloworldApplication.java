@@ -38,7 +38,7 @@ public class HelloworldApplication {
   @RequestMapping("/_ah/health")
   public String healthy() {
     // Message body required though ignored
-    return "Still surviving.";
+    return "Healthy";
   }
 
   public static void main(String[] args) {
