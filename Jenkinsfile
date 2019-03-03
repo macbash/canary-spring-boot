@@ -10,5 +10,8 @@ node {
      sh 'mvn sonar:sonar'
 }
 
+stage('Deploy') {
+   sh 'mvn deploy'
+}
 
 }
